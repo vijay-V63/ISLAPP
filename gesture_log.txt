@@ -1,0 +1,361 @@
+Sequence: Bye, Hello
+English: Bye. Hello.
+Telugu: Bye, hello.
+Hindi: Bye, hello.
+Sequence: Hello, Bye
+English: Hello, bye.
+Telugu: Hello, Bye.
+Hindi: Hello, Bye.
+Sequence: Thankyou, Bye
+English: Thank you, bye.
+Telugu: ధన్యవాదాలు, బాయ్. (Dhanyavaadaalu, Bye.)
+Hindi: धन्यवाद, अलविदा।
+Sequence: ILoveYou, Thankyou
+English: I love you. Thank you.
+Telugu: This is a tricky one because "ILoveYou" and "Thankyou" are single signs but represent phrases. We need to break them down and then translate them into Telugu in a grammatically correct way.
+
+Here's the breakdown and the output:
+
+Input: ['ILoveYou', 'Thankyou']
+
+Output: నేను నిన్ను ప్రేమిస్తున్నాను, ధన్యవాదాలు. (Nenu ninnu premistunnanu, dhanyavaadalu.)
+Hindi: मुझे तुमसे प्यार है, धन्यवाद।
+Sequence: ILoveYou, Thankyou
+English: I love you. Thank you.
+Telugu: This is a tricky one because "ILoveYou" and "Thankyou" are single signs representing entire phrases.  Here's how I'll translate them into Telugu, keeping in mind that direct, word-for-word translation isn't always the most natural way to express something:
+
+Input: ['ILoveYou', 'Thankyou']
+Output: నేను నిన్ను ప్రేమిస్తున్నాను, ధన్యవాదాలు.
+Hindi: मुझे तुमसे प्यार है, धन्यवाद।
+Sequence: ILoveYou, Thankyou
+English: I love you. Thank you.
+Telugu: This is a tricky one!  "ILoveYou" and "Thankyou" are single signs in ISL, but need to be broken down into Telugu for proper grammar. I'll assume the user intends them as single units of affection and gratitude.
+
+Output: నేను నిన్ను ప్రేమిస్తున్నాను, ధన్యవాదాలు.
+Hindi: Error in Hindi: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]
+Sequence: Bye, Thanks
+English: Error in English: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 37
+}
+]
+Telugu: Error in Telugu: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 32
+}
+]
+Hindi: Error in Hindi: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+]
+Timestamp: 2025-04-13 12:54:01
+Sequence: ILoveYou, Namasthe
+English: I love you, Namaste.
+Telugu: The best translation would depend on the context and the level of formality you want to convey. Here are a few options:
+
+* **Informal & Affectionate:**  నేను నిన్ను ప్రేమిస్తున్నాను, నమస్తే. (Nēnu ninnu prēmistunnānu, namastē.) - This is a direct translation and is generally understood.
+* **More Formal/Respectful (if Namaste is for someone older/respected):** నేను మిమ్మల్ని ప్రేమిస్తున్నాను, నమస్తే. (Nēnu mimmalni prēmistunnānu, namastē.) -  Uses "mimmalni" which is the respectful "you".
+* **Adding Emphasis on Affection (but potentially overly dramatic):**  నాకు నీపై చాలా ప్రేమ ఉంది, నమస్తే. (Nāku nīpai chālā prēma undi, namastē.) - This translates to "I have a lot of love for you, Namaste."  It's a bit more emphatic.
+
+**Which one to use?**
+
+*  **"నేను నిన్ను ప్రేమిస్తున్నాను, నమస్తే." (Nēnu ninnu prēmistunnānu, namastē.)** is likely the most common and generally appropriate choice.
+* If you're speaking to someone older or in a position of authority, **"నేను మిమ్మల్ని ప్రేమిస్తున్నాను, నమస్తే." (Nēnu mimmalni prēmistunnānu, namastē.)** would be more respectful.
+* The last option is best if you want to really emphasize the strength of your affection.
+
+Therefore, I recommend: **నేను నిన్ను ప్రేమిస్తున్నాను, నమస్తే. (Nēnu ninnu prēmistunnānu, namastē.)** unless you have a specific reason to choose one of the other options.
+Hindi: The most accurate and common translation is:
+
+**मैं तुमसे प्यार करता हूँ, नमस्ते। (Main tumse pyaar karta hoon, Namaste.)**  (Used if "I" is male)
+
+**मैं तुमसे प्यार करती हूँ, नमस्ते। (Main tumse pyaar karti hoon, Namaste.)** (Used if "I" is female)
+
+Here's a breakdown and some alternatives:
+
+*   **मैं (Main):** I
+*   **तुमसे (Tumse):** To you (a more intimate/affectionate way of saying "to you")
+*   **प्यार (Pyaar):** Love
+*   **करता हूँ (Karta hoon):** do/make, (part of the verb "to love", used by males)
+*   **करती हूँ (Karti hoon):** do/make, (part of the verb "to love", used by females)
+*   **नमस्ते (Namaste):** Greetings; I bow to you; Hello/Goodbye (with respect)
+
+**Important Considerations:**
+
+*   The choice between `करता हूँ` and `करती हूँ` depends entirely on the *speaker's* gender.
+*   Saying "I love you" is generally more serious and less casual in Hindi-speaking cultures than in English. It's important to consider the context before using this phrase.
+*   Adding "नमस्ते" after "I love you" is a bit unusual in common Hindi conversation. It's polite, but it might sound slightly formal or like you're ending the conversation abruptly.
+
+Therefore, the most appropriate translation is dependent on the sex of the speaker.
+
+Timestamp: 2025-04-13 12:54:17
+Sequence: ILoveYou, Bye
+English: I love you, bye.
+Telugu: The most common and natural translation would be:
+
+**నేను నిన్ను ప్రేమిస్తున్నాను, బాయ్.** (Nēnu ninnu prēmistunnānu, bāy!)
+
+Here's a breakdown:
+
+*   **నేను (Nēnu):** I
+*   **నిన్ను (Ninnu):** You (object form)
+*   **ప్రేమిస్తున్నాను (Prēmistunnānu):** Loving (Present continuous tense, expressing ongoing love)
+*   **బాయ్ (Bāy):** Bye (This is borrowed from English and commonly used)
+
+While grammatically correct, other options are less frequently used in casual conversation when saying goodbye:
+
+*   **నేను నిన్ను ప్రేమిస్తున్నాను, సెలవు.** (Nēnu ninnu prēmistunnānu, selavu.) - "Selavu" means "leave" or "goodbye", but is a bit more formal.
+*  **నేను నిన్ను ప్రేమిస్తున్నాను, వెళ్ళొస్తాను.** (Nēnu ninnu prēmistunnānu, vellostānu.)- "Vellostanu" means "I will come back".
+
+Therefore, **నేను నిన్ను ప్రేమిస్తున్నాను, బాయ్.** is the best and most natural translation.
+Hindi: The most common and natural translation would be:
+
+**"मैं तुमसे प्यार करता/करती हूँ, अलविदा।"**
+
+Here's a breakdown:
+
+* **मैं (Main):** I
+* **तुमसे (Tumse):** To you (informal, suitable for loved ones)
+* **प्यार करता/करती हूँ (Pyaar karta/karti hoon):** Love (does) - "karta" is used for masculine "I" and "karti" is used for feminine "I"
+* **अलविदा (Alvida):** Goodbye (formal farewell)
+
+Therefore, the complete translation is:
+
+**"मैं तुमसे प्यार करता हूँ, अलविदा।" (If the speaker is male)**
+
+or
+
+**"मैं तुमसे प्यार करती हूँ, अलविदा।" (If the speaker is female)**
+
+You could also use a slightly less formal "Bye" such as:
+
+* **"मैं तुमसे प्यार करता/करती हूँ, बाय।"** (Using the English word "bye" directly)
+
+Which sounds a bit more casual and common, especially amongst younger generations.
+
+Timestamp: 2025-04-13 12:54:24
+Sequence: Thankyou, Bye
+English: Thank you, bye.
+Telugu: The most common and natural translation would be:
+
+**ధన్యవాదాలు, బాయ్.** (Dhanyavaadalu, bye.)
+
+Here's a breakdown and some alternative options:
+
+* **ధన్యవాదాలు (Dhanyavaadalu):**  This is the standard, respectful way to say "thank you."
+* **బాయ్ (Bye):** Using "bye" is perfectly acceptable and common in Telugu, especially in urban areas and among younger generations.
+
+**Alternatives (Less common but still possible):**
+
+* **ధన్యవాదాలు, సెలవు.** (Dhanyavaadalu, Selavu.) -  "Selavu" literally means "leave" or "permission to leave" and can be used as a formal goodbye. This is a bit more formal than just saying "bye".
+* **థాంక్స్, బాయ్.** (Thanks, Bye.) -  Using "Thanks" is also acceptable, mirroring the English sentence even more closely.
+
+**Therefore, "ధన్యవాదాలు, బాయ్." is the most natural and commonly used translation.**
+Hindi: The most common and natural translations are:
+
+*   **धन्यवाद, अलविदा। (Dhanyavaad, alvidaa.)** - This is the most formal and widely understood.
+*   **शुक्रिया, बाय। (Shukriya, bye.)** - This is slightly less formal and uses the Hindi word "Shukriya" which is common, and the English word "bye" which is also very common in India.
+*   **धन्यवाद, फिर मिलेंगे। (Dhanyavaad, phir milenge.)** - This translates to "Thank you, we'll meet again." It's more specific if you intend to see the person again.
+*   **शुक्रिया, फिर मिलेंगे। (Shukriya, phir milenge.)** - This is a slightly less formal version of the above.
+
+The best option depends on the context and your relationship with the person. For most situations, **धन्यवाद, अलविदा। (Dhanyavaad, alvidaa.)** or **शुक्रिया, बाय। (Shukriya, bye.)** are perfectly acceptable.
+
+Timestamp: 2025-04-13 12:54:39
+Sequence: Hello, ILoveYou
+English: Hello, I love you.
+Telugu: The most common and appropriate translation is:
+
+**"హలో, నేను నిన్ను ప్రేమిస్తున్నాను."** (Hello, nēnu ninnu prēmistunnānu.)
+
+Here's a breakdown:
+
+*   **హలో** (Hello) - Hello
+*   **నేను** (nēnu) - I
+*   **నిన్ను** (ninnu) - you (accusative case, direct object)
+*   **ప్రేమిస్తున్నాను** (prēmistunnānu) - am loving, love (present continuous tense, implying ongoing affection)
+
+While "నేను నిన్ను ప్రేమిస్తున్నాను" is technically a present continuous tense, in Telugu (and in English too) it's used to express a general and ongoing feeling of love.  It's the standard and natural way to say "I love you" in Telugu.
+Hindi: Here are a few options, with slightly different nuances:
+
+* **नमस्ते, मैं तुमसे प्यार करता/करती हूँ।** (Namaste, main tumse pyaar karta/karti hoon.) - This is the most common and direct translation.  Use "karta" if you are male, and "karti" if you are female. "Namaste" is a respectful greeting.
+
+* **हेलो, मैं तुम्हें प्यार करता/करती हूँ।** (Hello, main tumhe pyaar karta/karti hoon.) - This is also very common and uses "hello" directly.  Again, "karta" if male, "karti" if female.
+
+* **हेलो, मुझे तुमसे प्यार है।** (Hello, mujhe tumse pyaar hai.) - This is another option. It translates to "Hello, I have love for you."  It's a bit more subtle.
+
+* **नमस्कार, मैं तुमसे प्यार करता/करती हूँ।** (Namaskar, main tumse pyaar karta/karti hoon.) - This is a slightly more formal greeting than "Namaste."
+
+**Which one should you use?**
+
+*  **For general use, I recommend: नमस्ते, मैं तुमसे प्यार करता/करती हूँ। (Namaste, main tumse pyaar karta/karti hoon.)** It's polite and direct.
+
+Timestamp: 2025-04-13 12:54:45
+Sequence: ILoveYou, Thanks
+English: I love you, thanks.
+Telugu: Here are a few options, with slightly different nuances:
+
+*   **నేను నిన్ను ప్రేమిస్తున్నాను, ధన్యవాదాలు.** (Nēnu ninnu prēmistunnānu, dhanyavādālu.) - This is the most literal and direct translation. It's polite and straightforward.
+
+*   **నేను నిన్ను ప్రేమిస్తున్నాను, థాంక్స్.** (Nēnu ninnu prēmistunnānu, thānks.) - This uses the English word "Thanks," which is common in informal Telugu conversations, especially among younger generations.
+
+*   **నేను నిన్ను ప్రేమిస్తున్నాను, కృతజ్ఞతలు.** (Nēnu ninnu prēmistunnānu, kr̥tajñatalu.) - This uses a more formal word for "thank you." It sounds more sincere or respectful.
+
+*  **నాకు నువ్వంటే ఇష్టం, ధన్యవాదాలు.** (Naaku nuvvante ishtam, dhanyavadalu) - This translates to "I like you, thank you". It's a softer way of saying it, indicating affection rather than deep love.
+
+**Which one to choose depends on the context and your relationship with the person you're speaking to.** If you want to be simple and understood, the first option is best. If you're close to the person and want to sound more casual, the second option is good. The third option is for more formal situations. If you wish to express simple affection rather than deep love, the fourth option is best.
+Hindi: There are a few ways to translate "I love you, thanks" into Hindi, depending on the nuance you want to convey:
+
+*   **मैं तुमसे प्यार करता/करती हूँ, धन्यवाद।** (Main tumse pyaar karta/karti hoon, dhanyavaad.) - This is a direct and common translation. *Karta* is for males, and *karti* is for females.
+
+*   **मुझे तुमसे प्यार है, धन्यवाद।** (Mujhe tumse pyaar hai, dhanyavaad.) - This is another common and slightly more formal way of saying "I love you."
+
+*   **मैं तुम्हें प्यार करता/करती हूँ, शुक्रिया।** (Main tumhein pyaar karta/karti hoon, shukriya.) -  Similar to the first option, but uses *shukriya* which is another word for "thank you," derived from Urdu/Persian.
+
+**Which one should you use?**
+
+*   The first two options (using *dhanyavaad*) are the most universally understood and acceptable.
+*   The third option (using *shukriya*) is also perfectly fine, especially in more urban areas or if you know the person you're speaking to is familiar with Urdu/Persian-influenced Hindi.
+
+**Therefore, the best options are:**
+
+*   **मैं तुमसे प्यार करता/करती हूँ, धन्यवाद।** (Main tumse pyaar karta/karti hoon, dhanyavaad.)
+*   **मुझे तुमसे प्यार है, धन्यवाद।** (Mujhe tumse pyaar hai, dhanyavaad.)
+
+Choose the one you like best. Remember to use *karta* if you are male and *karti* if you are female.
+
+Timestamp: 2025-04-13 12:54:52
+Sequence: Thanks, Thankyou
+English: Thanks, thank you.
+Telugu: The best translation of "Thanks, thank you" into Telugu is:
+
+**ధన్యవాదాలు, ధన్యవాదాలు.** (Dhanyavaadaalu, Dhanyavaadaalu)
+
+This is the most direct and common translation, simply repeating "thank you" for emphasis.
+
+Other options, depending on the context and level of formality, could be:
+
+*   **చాలా ధన్యవాదాలు.** (Chala Dhanyavaadaalu) - Thank you very much. (More formal)
+*   **థాంక్స్, థాంక్స్.** (Thanks, Thanks) - Using the English word, repeated.  Common in urban settings and among younger generations.
+*   **కృతజ్ఞతలు, కృతజ్ఞతలు.** (Kruthagnyathalu, Kruthagnyathalu) - Grateful, Grateful (More formal and literary)
+
+However,  **ధన్యవాదాలు, ధన్యవాదాలు.** remains the most widely understood and appropriate translation for the simple "Thanks, thank you."
+Hindi: The most common and natural translation of "Thanks, thank you" into Hindi is:
+
+**धन्यवाद, धन्यवाद।** (Dhanyavaad, dhanyavaad.)
+
+You could also use:
+
+* **शुक्रिया, शुक्रिया।** (Shukriya, shukriya.) - This is a more Urdu-influenced word for thanks, but perfectly acceptable and common in Hindi.
+* **बहुत धन्यवाद, बहुत धन्यवाद।** (Bahut dhanyavaad, bahut dhanyavaad.) - This translates to "Many thanks, many thanks" and is a more emphatic expression of gratitude.
+
+However,  **धन्यवाद, धन्यवाद।** is the most direct and widely understood translation.
+
+Timestamp: 2025-04-13 12:54:56
+Sequence: Thanks, Thankyou
+English: Thanks, thank you.
+Telugu: The most common and direct translation of "Thanks, thank you" into Telugu is:
+
+**ధన్యవాదాలు, ధన్యవాదాలు. (Dhanyavaadaalu, Dhanyavaadaalu.)**
+
+This literally means "Thanks, thanks". It's perfectly acceptable and understandable.
+
+However, you could also say:
+
+*   **చాలా ధన్యవాదాలు. (Chala Dhanyavaadaalu.)** - This means "Many thanks" or "Thank you very much."  It conveys a slightly stronger sense of gratitude.
+
+Depending on the context, any of these would work well. If you just want a direct, simple translation, use the first one.
+Hindi: The most common and direct translations are:
+
+*   **धन्यवाद, धन्यवाद।** (Dhan'yavaad, dhan'yavaad.) - This is the most formal and standard way to say "Thanks, thank you."
+
+Other options, depending on context, could be:
+
+*   **शुक्रिया, शुक्रिया।** (Shukriya, shukriya.) - This is a slightly less formal option, often used in everyday conversation.  Also means "Thanks, thank you."
+
+While you could also use phrases like "बहुत धन्यवाद" (Bahut dhanyavaad) or "बहुत शुक्रिया" (Bahut shukriya) which translate to "Thank you very much", the direct translation for "Thanks, thank you" implying emphasis or repetition is best served by repeating the simple "धन्यवाद" or "शुक्रिया".
+
+Timestamp: 2025-04-13 12:55:04
+Sequence: Thankyou, Thanks
+English: Thank you, thanks.
+Telugu: The most common and natural translations are:
+
+* **ధన్యవాదాలు, ధన్యవాదాలు. (Dhanyavaadaalu, dhanyavaadaalu.)** - This is a direct translation and perfectly acceptable.  It means "Thank you, thank you."
+* **చాలా ధన్యవాదాలు. (Chala dhanyavaadaalu.)** - This means "Many thanks."  While not a direct translation, it carries a similar level of gratitude.
+
+So, either **ధన్యవాదాలు, ధన్యవాదాలు.** or **చాలా ధన్యవాదాలు.** would work well.  I'd lean towards the first one for a more literal translation.
+Hindi: There are a few ways to translate "Thank you, thanks" into Hindi, depending on the nuance you want to convey:
+
+* **Formal:**  "धन्यवाद, शुक्रिया।" (Dhan'yavaad, Shukriyaa.) - This is the most formal and polite way.  "Dhan'yavaad" is closer to "Thank you" and "Shukriyaa" is a slightly shorter, but still formal, thanks.
+
+* **Slightly less formal, but still polite:** "शुक्रिया, धन्यवाद।" (Shukriyaa, Dhan'yavaad.) - Reversing the order makes it slightly less formal, but still very acceptable and polite.
+
+* **Informal:** "शुक्रिया।" (Shukriyaa.) -  This is a simple and common way to say thanks in most situations.
+
+* **Very Informal/Casual:** "धन्यवाद।" (Dhan'yavaad.) - While "Dhan'yavaad" is generally formal, in a very casual setting, it can also be used as a simple thank you, similar to just saying "Thanks."
+
+Since the English phrase "Thank you, thanks" implies a combination of gratitude and informality, the best translation would likely be:
+
+* **Combination of Formal and Informal:** "धन्यवाद, शुक्रिया।" (Dhan'yavaad, Shukriyaa) OR "शुक्रिया, धन्यवाद।" (Shukriyaa, Dhan'yavaad.)
+
+Therefore, the most appropriate translation is **"धन्यवाद, शुक्रिया।"** or **"शुक्रिया, धन्यवाद।"**
+
+Timestamp: 2025-04-13 12:55:19
+Sequence: ILoveYou, Thankyou
+English: I love you, thank you.
+Telugu: There are a few ways to translate "I love you, thank you" into Telugu, depending on the nuance you want to convey. Here are a couple of options:
+
+**Option 1 (Most Common & Straightforward):**
+
+*   **నేను నిన్ను ప్రేమిస్తున్నాను, ధన్యవాదాలు. (Nenu ninnu premisthunnanu, dhanyavaadalu.)**
+
+    *   **నేను (Nenu):** I
+    *   **నిన్ను (Ninnu):** You (accusative case)
+    *   **ప్రేమిస్తున్నాను (Premisthunnanu):** Am loving / love (present continuous tense, expressing current feeling)
+    *   **ధన్యవాదాలు (Dhanyavaadalu):** Thank you
+
+**Option 2 (More affectionate and slightly formal):**
+
+*   **నేను మిమ్మల్ని ప్రేమిస్తున్నాను, ధన్యవాదాలు. (Nenu mimmalni premisthunnanu, dhanyavaadalu.)**
+
+    *   This option uses "మిమ్మల్ని (Mimmalni)" instead of "నిన్ను (Ninnu)".  "Mimmalni" is the more respectful/formal form of "you" (accusative case). While using "ninnu" with loved ones is common, using "mimmalni" can add a touch of affection and respect, especially when speaking to elders or someone you deeply admire.
+
+**Important Considerations:**
+
+*   The choice between `ninnu` and `mimmalni` depends on your relationship with the person you're speaking to.  For a close friend or romantic partner, `ninnu` is perfectly fine.  For an elder or someone you wish to show more respect, `mimmalni` is preferred.
+*   While there are more poetic and elaborate ways to express love in Telugu, these two options are the most direct and commonly used translations for the given sentence.
+*   The tone remains the same in both the sentences.
+Hindi: Error in Hindi: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 37
+}
+]
+
