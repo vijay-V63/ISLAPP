@@ -1,13 +1,11 @@
 import streamlit as st
+import cv2
 import mediapipe as mp
 import numpy as np
 import tensorflow as tf
 import google.generativeai as genai
 from time import sleep
 import warnings
-import streamlit_webrtc as webrtc
-from webrtc_streamer import VideoTransformerBase
-
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -88,70 +86,76 @@ def translate_sentence(sentence, target_language):
         except Exception as e:
             return f"Error in {target_language}: {e}"
 
-# Define the video transformer
-class VideoTransformer(VideoTransformerBase):
-    def __init__(self):
-        self.gesture_sequence = []
-        self.last_gesture = None
-        self.sentence_cache = {'English': '', 'Telugu': '', 'Hindi': ''}
+# Initialize webcam
+cap = cv2.VideoCapture(1)
+if not cap.isOpened():
+    st.error("Error: Could not open webcam.")
+    st.stop()
 
-    def transform(self, frame):
-        # Convert frame to RGB
-        frame_rgb = frame.to_rgb()
-        
-        # Process with Mediapipe
-        results = hands.process(frame_rgb)
-        
-        if results.multi_hand_landmarks:
-            landmarks = []
-            for hand_landmarks in results.multi_hand_landmarks[:2]:
-                mp_drawing.draw_landmarks(frame_rgb, hand_landmarks, mp_hands.HAND_CONNECTIONS)
-                for lm in hand_landmarks.landmark:
-                    landmarks.extend([lm.x, lm.y, lm.z])
-            if len(results.multi_hand_landmarks) == 1:
-                landmarks.extend([0] * 63)
+# Placeholder for video
+video_placeholder = st.empty()
 
-            try:
-                landmarks = np.array([landmarks], dtype=np.float32)
-                pred = model.predict(landmarks, verbose=0)
-                gesture = classes[np.argmax(pred)]
-                confidence = np.max(pred)
+# Store gestures
+gesture_sequence = []
+last_gesture = None
+sentence_cache = {'English': '', 'Telugu': '', 'Hindi': ''}
 
-                # Store gesture
-                if confidence > 0.8 and gesture != self.last_gesture:
-                    self.gesture_sequence.append(gesture)
-                    self.last_gesture = gesture
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        st.error("Error: Failed to capture frame.")
+        break
 
-                # Generate and translate sentences
-                if len(self.gesture_sequence) >= 2:
-                    english_sentence = generate_sentence_from_signs(self.gesture_sequence)
-                    sentences = {
-                        'English': english_sentence,
-                        'Telugu': translate_sentence(english_sentence, 'Telugu'),
-                        'Hindi': translate_sentence(english_sentence, 'Hindi')
-                    }
-                    self.sentence_cache = sentences
-                    self.gesture_sequence = []
-                    self.last_gesture = None
+    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    results = hands.process(frame_rgb)
 
-                # Update sidebar
-                gesture_placeholder.write(f"**Current Gesture**: {gesture} ({confidence:.2f})")
-                sequence_placeholder.write(f"**Sequence**: {', '.join(self.gesture_sequence)}")
-                sentence_text = "\n".join([f"**{lang}**: {sentence}" for lang, sentence in self.sentence_cache.items()])
-                sentence_placeholder.markdown(sentence_text)
+    if results.multi_hand_landmarks:
+        landmarks = []
+        for hand_landmarks in results.multi_hand_landmarks[:2]:
+            mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            for lm in hand_landmarks.landmark:
+                landmarks.extend([lm.x, lm.y, lm.z])
+        if len(results.multi_hand_landmarks) == 1:
+            landmarks.extend([0] * 63)
 
-            except Exception as e:
-                st.error(f"Prediction error: {e}")
+        try:
+            landmarks = np.array([landmarks], dtype=np.float32)
+            pred = model.predict(landmarks, verbose=0)
+            gesture = classes[np.argmax(pred)]
+            confidence = np.max(pred)
 
-        return frame_rgb
+            # Store gesture
+            if confidence > 0.8 and gesture != last_gesture:
+                gesture_sequence.append(gesture)
+                last_gesture = gesture
 
-# Streamlit WebRTC setup for webcam
-webrtc_streamer = webrtc.StreamlitWebRtc(
-    video_transformer_factory=VideoTransformer,
-    key="isl-app",
-    video_frame_callback=None,
-)
+            # Generate and translate sentences
+            if len(gesture_sequence) >= 2:
+                english_sentence = generate_sentence_from_signs(gesture_sequence)
+                sentences = {
+                    'English': english_sentence,
+                    'Telugu': translate_sentence(english_sentence, 'Telugu'),
+                    'Hindi': translate_sentence(english_sentence, 'Hindi')
+                }
+                sentence_cache = sentences
+                gesture_sequence = []
+                last_gesture = None
 
-# Running the Streamlit app
-if __name__ == "__main__":
-    st.write("Streamlit WebRTC with ISL Recognition is running.")
+            # Update sidebar
+            gesture_placeholder.write(f"**Current Gesture**: {gesture} ({confidence:.2f})")
+            sequence_placeholder.write(f"**Sequence**: {', '.join(gesture_sequence)}")
+            sentence_text = "\n".join([f"**{lang}**: {sentence}" for lang, sentence in sentence_cache.items()])
+            sentence_placeholder.markdown(sentence_text)
+
+        except Exception as e:
+            st.error(f"Prediction error: {e}")
+
+    # Display video
+    video_placeholder.image(frame_rgb, channels="RGB")
+
+    # Break loop on Streamlit stop
+    if not st.session_state.get('run', True):
+        break
+
+cap.release()
+hands.close()
