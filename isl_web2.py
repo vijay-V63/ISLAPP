@@ -1,16 +1,15 @@
 import streamlit as st
-import cv2
 import mediapipe as mp
 import numpy as np
 import tensorflow as tf
 import google.generativeai as genai
 from time import sleep
 import warnings
+import streamlit_webrtc as webrtc
+from webrtc_streamer import VideoTransformerBase
+
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
-
-from streamlit_webrtc import webrtc_streamer, VideoProcessorBase, WebRtcMode, RTCConfiguration
-import av
 
 # Streamlit setup
 st.title("Indian Sign Language Detection")
@@ -58,8 +57,8 @@ def generate_sentence_from_signs(sign_list):
     Input: ['I', 'LOVE', 'YOU']
     Output: I love you.
 
-    Input: ['HELLO', 'MY', 'NAME', 'IS', 'VIJAY']
-    Output: Hello, my name is Vijay.
+    Input: ['HELLO', 'MY', 'NAME', 'IS', 'RAVI']
+    Output: Hello, my name is Ravi.
 
     Input: ['HELLO', 'THANKYOU']
     Output: Hello, thank you.
@@ -89,42 +88,41 @@ def translate_sentence(sentence, target_language):
         except Exception as e:
             return f"Error in {target_language}: {e}"
 
-# RTC Configuration
-RTC_CONFIGURATION = RTCConfiguration({
-    "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
-})
-
-# VideoProcessor class for streamlit-webrtc
-class VideoProcessor(VideoProcessorBase):
+# Define the video transformer
+class VideoTransformer(VideoTransformerBase):
     def __init__(self):
         self.gesture_sequence = []
         self.last_gesture = None
         self.sentence_cache = {'English': '', 'Telugu': '', 'Hindi': ''}
 
-    def recv(self, frame):
-        img = frame.to_ndarray(format="bgr24")
-        frame_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    def transform(self, frame):
+        # Convert frame to RGB
+        frame_rgb = frame.to_rgb()
+        
+        # Process with Mediapipe
         results = hands.process(frame_rgb)
-
+        
         if results.multi_hand_landmarks:
             landmarks = []
             for hand_landmarks in results.multi_hand_landmarks[:2]:
-                mp_drawing.draw_landmarks(img, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+                mp_drawing.draw_landmarks(frame_rgb, hand_landmarks, mp_hands.HAND_CONNECTIONS)
                 for lm in hand_landmarks.landmark:
                     landmarks.extend([lm.x, lm.y, lm.z])
             if len(results.multi_hand_landmarks) == 1:
                 landmarks.extend([0] * 63)
 
             try:
-                landmarks_np = np.array([landmarks], dtype=np.float32)
-                pred = model.predict(landmarks_np, verbose=0)
+                landmarks = np.array([landmarks], dtype=np.float32)
+                pred = model.predict(landmarks, verbose=0)
                 gesture = classes[np.argmax(pred)]
                 confidence = np.max(pred)
 
+                # Store gesture
                 if confidence > 0.8 and gesture != self.last_gesture:
                     self.gesture_sequence.append(gesture)
                     self.last_gesture = gesture
 
+                # Generate and translate sentences
                 if len(self.gesture_sequence) >= 2:
                     english_sentence = generate_sentence_from_signs(self.gesture_sequence)
                     sentences = {
@@ -136,6 +134,7 @@ class VideoProcessor(VideoProcessorBase):
                     self.gesture_sequence = []
                     self.last_gesture = None
 
+                # Update sidebar
                 gesture_placeholder.write(f"**Current Gesture**: {gesture} ({confidence:.2f})")
                 sequence_placeholder.write(f"**Sequence**: {', '.join(self.gesture_sequence)}")
                 sentence_text = "\n".join([f"**{lang}**: {sentence}" for lang, sentence in self.sentence_cache.items()])
@@ -144,15 +143,15 @@ class VideoProcessor(VideoProcessorBase):
             except Exception as e:
                 st.error(f"Prediction error: {e}")
 
-        return av.VideoFrame.from_ndarray(img, format="bgr24")
+        return frame_rgb
 
-# Start the webcam stream
-webrtc_streamer(
-    key="isl-detection",
-    mode=WebRtcMode.SENDRECV,
-    rtc_configuration=RTC_CONFIGURATION,
-    media_stream_constraints={"video": True, "audio": False},
-    video_processor_factory=VideoProcessor,
-    async_processing=True,
+# Streamlit WebRTC setup for webcam
+webrtc_streamer = webrtc.StreamlitWebRtc(
+    video_transformer_factory=VideoTransformer,
+    key="isl-app",
+    video_frame_callback=None,
 )
 
+# Running the Streamlit app
+if __name__ == "__main__":
+    st.write("Streamlit WebRTC with ISL Recognition is running.")
